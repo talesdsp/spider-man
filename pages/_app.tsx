@@ -1,6 +1,6 @@
-import Layout from "@/components/Layout/Layout"
-import { GlobalStyle, theme } from "@/theme"
 import { ThemeProvider } from "styled-components"
+import Layout from "~/components/Layout/Layout"
+import { GlobalStyle, theme } from "~/theme"
 
 type AppProps = { Component: React.FC; pageProps: {} }
 

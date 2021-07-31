@@ -1,4 +1,8 @@
-import SpiderIcon from "@/public/svgs/spider-icon.svg"
+import gsap, { Expo } from "gsap"
+import { useEffect, useRef, useState } from "react"
+import Tilt from "react-tilt"
+import styled, { keyframes } from "styled-components"
+import SpiderIcon from "~/public/svgs/spider-icon.svg"
 import {
   Button,
   Column,
@@ -12,11 +16,7 @@ import {
   Spacer,
   Stack,
   Text,
-} from "@/widgets"
-import gsap, { Expo } from "gsap"
-import { useEffect, useRef, useState } from "react"
-import Tilt from "react-tilt"
-import styled, { keyframes } from "styled-components"
+} from "~/widgets"
 
 const start = 50
 const end = 70
@@ -59,7 +59,7 @@ export default function Home() {
         opacity: 0,
         duration: 0.7,
         ease: Expo.easeInOut,
-        // stagger: 0.2,
+        stagger: 0.2,
       })
   }, [videoRef])
 
@@ -211,12 +211,12 @@ const flash = keyframes`
       stroke-dasharray: 1 100;
       fill: transparent,
     }
-    25% {
+    45% {
       stroke-width: 1;
       stroke-dasharray: 100 0;
       fill: transparent,
     }
-    60%,
+    80%,
     100% {
       stroke-width: 30;
       fill: #edf1f7;
@@ -239,7 +239,7 @@ const BgLoader = styled.div`
     width: 59px;
     height: 75px;
     fill: transparent;
-    animation: ${flash} 12s ease infinite alternate;
+    animation: ${flash} 1s ease infinite alternate;
   }
 `
 
